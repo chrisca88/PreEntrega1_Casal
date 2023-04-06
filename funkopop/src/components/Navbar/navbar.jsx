@@ -1,33 +1,29 @@
 import { useState } from 'react'
 import CartWidget from '../CartWidget/CartWidget'
+import { Container, Nav, Navbar} from "react-bootstrap"
 
-const Navbar = () =>{
-    const [ counter, setCounter ] = useState(0)
-    let sumarContador = () =>{
-        setCounter (counter + 1)
-    }
-
-    let restarContador = () =>{
-        if (counter > 0){
-            setCounter (counter - 1)
-        }
-        
-    }
+const NavBar = () =>{
     return (
-    <nav className='navbar'>
-            <img src="./src/assets/rsz_funko_brand.png" />
-            <div>
-                <a href='#'>Dragon Ball </a>
-                <a href='#'>Pokemon </a>
-                <a href='#'>One Piece </a>
-            </div>
-            <p>{counter} </p><CartWidget /> 
-            <button onClick={sumarContador}>+</button>
-            <button onClick={restarContador}>-</button>
-            
-            
-    </nav>
+     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+     <Container>
+       <Navbar.Brand href="#home"><img src='rsz_funko_brand.png' alt='logo' /></Navbar.Brand>
+       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+       <Navbar.Collapse id="responsive-navbar-nav">
+         <Nav className="me-auto">
+           <Nav.Link href="#dragonball">Dragon Ball</Nav.Link>
+           <Nav.Link href="#pokemon">Pokemon</Nav.Link>
+           <Nav.Link href="#onepiece">One Piece</Nav.Link>
+         </Nav>
+         <Nav>
+           <Nav.Link eventKey={2} href="#carrito">
+           <p>5</p><CartWidget />
+           </Nav.Link>
+         </Nav>
+       </Navbar.Collapse>
+     </Container>
+   </Navbar>
+
     )
 }
 
-export default Navbar
+export default NavBar
