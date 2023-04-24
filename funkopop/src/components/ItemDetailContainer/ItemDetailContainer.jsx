@@ -1,18 +1,34 @@
-import { useParams } from "react"
-import { ItemDetail } from "../ItemDetail/ItemDetail"
+import { useState } from "react"
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import mFetch from "../../utils/mFetch"
+import {Spinner} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemDetail from "../ItemDetail/ItemDetail"
 
  const ItemDetailContanier = () => {
-    // Estado para guardar un product
-    const { pid } = useParams() // pid
-    // UseEffect -> traer un proudcto por pid -> guardar en el estado
+    
+    const { pid } = useParams()
+    const [funko,setFunko] = useState({})
+    const [loading,setLoading] = useState(true)
+    
 
-    console.log(pid)
+    useEffect(() =>{
+       mFetch(pid)
+       .then(respuesta => setFunko(respuesta))
+       .catch(err => console.log(err))
+       .finally(()=> setLoading(false) )
+
+    },[])
+
     return (
         <div>
-            {pid}
-            <ItemDetail 
-                // product = {product}                
-            />
+            {
+            loading ?
+            <Spinner color="primary" />
+            :
+            <ItemDetail funko={funko} />
+            }
         </div>
     )
 }

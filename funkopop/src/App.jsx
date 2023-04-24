@@ -1,33 +1,32 @@
 
-//import './App.css'
-//import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-//import NavBar from './components/Navbar/navbar'
-
-//import 'bootstrap/dist/css/bootstrap.min.css'
-
-
-
-//function App() {
-
- // return (
-//    <div className="App">
-//      <NavBar />
-//      <ItemListContainer saludo={'Saludos!'} />
-//    </div>
-//  )
-//}
-
-//export default App
-
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react'
-
-import { NavBar } from './components/NavBar/NavBar'
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
-import { ItemCount } from './components/ItemCount/ItemCount'
-import ItemDetailContanier from './components/ItemDetailContainer/ItemDetailContainer'
-
+/*import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import NavBar from './components/Navbar/navbar'
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+
+
+function App() {
+  
+  return (
+    <div className="App">
+    <NavBar />
+    <ItemListContainer />
+    </div>
+    )
+  }
+  
+  export default App*/
+  
+  import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+  import NavBar from './components/Navbar/navbar'
+  import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+  import ItemDetailContanier from './components/ItemDetailContainer/ItemDetailContainer'
+  import ItemCount from './components/ItemCount/ItemCount'
+  import 'bootstrap/dist/css/bootstrap.min.css'
+  import './App.css'
+
 
 
 function App() {   
@@ -49,20 +48,12 @@ function App() {
                 <Route 
                     path='/detail/:pid' 
                     element={<ItemDetailContanier />}
-                />
-                {/* CartContainer es solo ejemplo no entra en el desafío */}
-                <Route 
-                    path='/cart' 
-                    element={<CartContainer />} 
+                /> 
 
-                />      
-                {/* <Route path='/notfound' element={<NotFound404 />} />       */}
-
-                {/* <Route path='*' element={ <Navigate to='/notfound' /> } />             */}
                 <Route path='*' element={ <Navigate to='/' /> } />            
             </Routes>
             <ItemCount />
-            {/* <Footer /> */}
+            
         </Router>            
     )
 }
