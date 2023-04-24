@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ItemCount from "../ItemCount/ItemCount"
 
 
 const ItemDetail = ({funko}) => {

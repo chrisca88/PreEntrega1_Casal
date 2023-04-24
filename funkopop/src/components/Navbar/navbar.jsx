@@ -7,18 +7,18 @@ const NavBar = () =>{
     return (
      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
-       <Navbar.Brand href="#home"><img src='rsz_funko_brand.png' alt='logo' /></Navbar.Brand>
+       <Link to='/'><img src='rsz_funko_brand.png' alt='logo' /></Link>
        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
        <Navbar.Collapse id="responsive-navbar-nav">
          <Nav className="me-auto">
-           <Nav.Link href="#dragonball">Dragon Ball</Nav.Link>
-           <Nav.Link href="#pokemon">Pokemon</Nav.Link>
-           <Nav.Link href="#onepiece">One Piece</Nav.Link>
+           <NavLink to="/categoria/DragonBall">Dragon Ball</NavLink>
+           <NavLink to="/categoria/Pokemon">Pokemon</NavLink>
+           <NavLink to="/categoria/OnePiece">One Piece</NavLink>
          </Nav>
          <Nav>
-           <Nav.Link eventKey={2} href="#carrito">
+           <NavLink to="/cart">
            <p>5</p><CartWidget />
-           </Nav.Link>
+           </NavLink>
          </Nav>
        </Navbar.Collapse>
      </Container>

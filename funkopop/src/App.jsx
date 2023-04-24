@@ -1,24 +1,3 @@
-
-/*import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import NavBar from './components/Navbar/navbar'
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-
-
-function App() {
-  
-  return (
-    <div className="App">
-    <NavBar />
-    <ItemListContainer />
-    </div>
-    )
-  }
-  
-  export default App*/
-  
   import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
   import NavBar from './components/Navbar/navbar'
   import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -52,7 +31,6 @@ function App() {
 
                 <Route path='*' element={ <Navigate to='/' /> } />            
             </Routes>
-            <ItemCount />
             
         </Router>            
     )

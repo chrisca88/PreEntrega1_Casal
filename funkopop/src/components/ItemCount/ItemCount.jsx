@@ -12,7 +12,7 @@ import { useState } from "react"
 
   return (
     <div>
-        <p>Clicks: {counter}</p>
+        <p>Agregar al carrito: {counter} items</p>
         <button onClick={handleCount}>+1</button>
     </div>
   )
