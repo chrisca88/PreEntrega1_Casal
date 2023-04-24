@@ -2,7 +2,7 @@ import Item from "../Item/Item"
 
 const ItemList = ({funkos}) => {
   return (
-    <div>
+    <div className="container my-3">
              
         {funkos.map ( funko => <Item key={funko.id}  funko = {funko} /> )  }    
             
