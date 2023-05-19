@@ -5,6 +5,7 @@ import mFetch from "../../utils/mFetch"
 import {Spinner} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import Loading from "../Loading/Loading"
 
  const ItemDetailContanier = () => {
     
@@ -25,7 +26,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
         <div>
             {
             loading ?
-            <Spinner color="primary" className="my-5" />
+            <Loading />
             :
             <ItemDetail funko={funko} />
             }

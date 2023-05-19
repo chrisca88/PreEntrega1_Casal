@@ -1,20 +1,17 @@
-import { useState } from "react"
+import { useCounter } from "../../hook/useCounter"
 
 
- const ItemCount = () => {
+ const ItemCount = ({initial=1, stock=5, onAdd}) => {
     
-    const [ counter, setCounter ] = useState(0)
-
-    let handleCount = () =>{
-        setCounter(counter+1)
-    }
-
+     const { counter, handleSumar, handleRestar} = useCounter(initial,1,stock)
 
   return (
-    <div>
-        <p>Agregar al carrito: {counter} items</p>
-        <button onClick={handleCount}>+1</button>
-    </div>
+    <center>
+      <button onClick={handleSumar}>+1</button>
+      <label>{counter}</label>
+      <button onClick={handleRestar}>-1</button>
+      <button onClick={()=>{onAdd(counter)}}>Agregar al carrito</button>
+    </center>
   )
 }
 

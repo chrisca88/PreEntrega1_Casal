@@ -9,7 +9,7 @@ const ItemDetail = ({funko}) => {
     const {addToCart} = useCartContext()
 
     const onAdd = (cantidad) =>{
-        addToCart({...producto, cantidad})
+        addToCart({...funko, cantidad})
         setIsCant(true)
     }
 
@@ -28,8 +28,8 @@ const ItemDetail = ({funko}) => {
                     <ItemCount onAdd={onAdd} />
                     :
                         <>
-                        <Link to={'/cart'} className="btn btn-outlane-danger">Finalizar compra</Link>
-                        <Link to={'/'} className="btn btn-outlane-success">Continuar comprando</Link>
+                        <Link to='/cart' className="btn btn-outlane-danger">Finalizar compra</Link>
+                        <Link to='/' className="btn btn-outlane-success">Continuar comprando</Link>
                         </>
 
                 }
