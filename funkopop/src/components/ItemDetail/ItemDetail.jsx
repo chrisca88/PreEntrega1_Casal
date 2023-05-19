@@ -1,12 +1,15 @@
 import { useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
+import { useCartContext } from "../../context/CartContext"
 
 
 const ItemDetail = ({funko}) => {
   
     const [isCant, setIsCant] = useState(false)
+    const {addToCart} = useCartContext()
 
     const onAdd = (cantidad) =>{
+        addToCart({...producto, cantidad})
         setIsCant(true)
     }
 
