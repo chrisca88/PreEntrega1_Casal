@@ -25,7 +25,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
         <div>
             {
             loading ?
-            <Spinner color="primary" />
+            <Spinner color="primary" className="my-5" />
             :
             <ItemDetail funko={funko} />
             }

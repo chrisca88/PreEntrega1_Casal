@@ -35,7 +35,7 @@ const ItemListContainer = ({saludo}) =>{
 
     return (
         loading ?
-            <Spinner color="primary"/>
+            <Spinner color="primary" className="my-5"/>
              :
         <ItemList funkos ={funkos}/>
     )

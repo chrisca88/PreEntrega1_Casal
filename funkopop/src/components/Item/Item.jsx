@@ -10,8 +10,12 @@ const Item = ({funko : {id,name,price,foto,stock}}) => {
                         <Link to={`/detail/${id}`}>
                             <img src={foto} alt="funko" />
                         </Link>
-                        <p>Precio: ${price}</p>
-                        <p>Stock: {stock}</p>
+                        <div>
+                        <br />
+                        <p className="fw-bolder">Precio: ${price}</p>
+                        <p>Stock: {stock}</p> 
+                        </div>
+                        
                     </div>
             </div>       
     
