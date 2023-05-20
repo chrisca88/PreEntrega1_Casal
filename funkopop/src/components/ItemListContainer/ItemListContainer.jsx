@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import {useParams} from "react-router-dom"
 import mFetch from "../../utils/mFetch"
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore' 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './ItemListContainer.css'
 import Loading from "../Loading/Loading"
@@ -14,24 +15,28 @@ const ItemListContainer = ({saludo}) =>{
 
     const { categoria } = useParams()
 
+    
+    const dbFirestore = getFirestore()
+    const queryCollection = collection(dbFirestore,'funkos')
     useEffect ( () => {
         if (!categoria){
-            mFetch()
-            .then( result => {
-                setFunkos(result)
-            })
-            .catch(err => console.log(err))
-            .finally(()=>setLoading(false))          
+            getDocs(queryCollection)
+                .then( resp => setFunkos( resp.docs.map(funkos =>({id: funkos.id, ...funkos.data()}))))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))         
         }else{
-            mFetch()
-            .then( result => {
-                setFunkos(result.filter(funko => funko.categoria === categoria))
-            })
-            .catch(err => console.log(err))
-            .finally( () =>setLoading(false))
+           const queryCollectionFiltered = query(
+            queryCollection,
+            where('categoria','==',categoria)
+           )
+           getDocs(queryCollectionFiltered)
+                .then( resp => setFunkos( resp.docs.map(funkos =>({id: funkos.id, ...funkos.data()}))))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))
     }
 
     },[categoria])
+
 
     return (
         loading ?
