@@ -15,10 +15,15 @@ import Loading from "../Loading/Loading"
     
 
     useEffect(() =>{
-       mFetch(pid)
-       .then(respuesta => setFunko(respuesta))
-       .catch(err => console.log(err))
-       .finally(()=> setLoading(false) )
+    //    mFetch(pid)
+    //    .then(respuesta => setFunko(respuesta))
+    //    .catch(err => console.log(err))
+    //    .finally(()=> setLoading(false) )
+
+       getDocs(pid)
+        .then( resp => setFunko( resp.docs.map(funko =>({id: funko.id, ...funko.data()}))))
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))  
 
     },[])
 
