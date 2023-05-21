@@ -1,8 +1,5 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import mFetch from "../../utils/mFetch"
-import {Spinner} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Loading from "../Loading/Loading"
@@ -16,18 +13,6 @@ const ItemDetailContanier = () => {
     const [loading,setLoading] = useState(true)
     
     
-    //useEffect(() =>{
-        //    mFetch(pid)
-        //    .then(respuesta => setFunko(respuesta))
-        //    .catch(err => console.log(err))
-        //    .finally(()=> setLoading(false) )
-        
-        //   getDocs(queryCollectionFiltered)
-    //    .then( resp => setFunko( resp.docs.map(funko =>({id: funko.id, ...funko.data()}))))
-    //    .catch(err => console.log(err))
-    //    .finally(()=> setLoading(false))  
-    
-    //},[])
     
     
     useEffect(()=>{

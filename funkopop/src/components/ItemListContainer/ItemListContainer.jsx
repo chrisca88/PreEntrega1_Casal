@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import {useParams} from "react-router-dom"
-import mFetch from "../../utils/mFetch"
 import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore' 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './ItemListContainer.css'

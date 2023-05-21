@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import CartWidget from '../CartWidget/CartWidget'
 import { Container, Nav, Navbar} from "react-bootstrap"
-import { Link, NavLink, useParams } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 
 const NavBar = () =>{
@@ -18,7 +18,7 @@ const NavBar = () =>{
          </Nav>
          <Nav>
            <NavLink to="/cart">
-           <p>5</p><CartWidget />
+           <CartWidget />
            </NavLink>
          </Nav>
        </Navbar.Collapse>

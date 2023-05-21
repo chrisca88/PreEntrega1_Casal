@@ -29,8 +29,8 @@ const ItemDetail = ({funko}) => {
                     <ItemCount onAdd={onAdd} />
                     :
                         <>
-                        <Link to='/cart' className="btn btn-outlane-danger">Finalizar compra</Link>
-                        <Link to='/' className="btn btn-outlane-success">Continuar comprando</Link>
+                        <Link to='/cart' className="btn btn-outline-danger">Finalizar compra</Link>
+                        <Link to='/' className="btn btn-outline-success">Continuar comprando</Link>
                         </>
 
                 }
